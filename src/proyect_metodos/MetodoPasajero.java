@@ -8,6 +8,8 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import proyect_clases.Pasajero;
+import java.nio.file.*;
+
 
 public class MetodoPasajero {
     
@@ -18,11 +20,21 @@ public class MetodoPasajero {
         vPrincipal.addElement(unPasajero);
     }
     
+    
     //guardar archivo txt
     public void guardarArchivoPasajero(Pasajero pasajero){
         
         try {
+            boolean FileWriter;
+            
+           
             FileWriter fw = new FileWriter ("C:\\Pasajero.txt", true);
+            
+            if  (fw.exists())
+            {
+                System.out.println("OJO: ¡¡No existe el archivo de configuración!!");
+            } 
+            
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter pw = new PrintWriter(bw);
             pw.print(pasajero.getNombre_pasajero());
@@ -101,6 +113,10 @@ public class MetodoPasajero {
     public void EliminarPasajero(){
     
         //FALTA
+    }
+
+    private void exists() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

@@ -16,6 +16,10 @@ public class Rutas {
     public Rutas(){
     
     }
+    public boolean exists(){
+        return false;
+    
+    }
 
     public Rutas(int id_Ruta, String nombre_Ruta, String origen_Ruta, String destino_Ruta, String fecha_Ruta, String hora_Ruta, String costo_Ruta) {
         this.id_Ruta = id_Ruta;
